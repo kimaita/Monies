@@ -1,0 +1,5 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(»œúÿÿÿÿ
+q	java:S116"WRename this field "PRIVATE_MODE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íã‰¡ùÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(Íã‰¡ùÿÿÿÿ

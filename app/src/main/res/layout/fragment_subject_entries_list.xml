@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.SubjectEntriesListFragment">
+
+    <include
+        android:id="@+id/appBar_subject"
+        layout="@layout/appbar_subject" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/appBar_subject">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/layout_inOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/subject_card_in"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/small_padding"
+                    app:cardBackgroundColor="@color/card_in_analysis_bg"
+                    app:cardCornerRadius="@dimen/small_padding"
+                    app:contentPadding="@dimen/smaller_padding">
+
+                    <TextView
+                        android:id="@+id/subject_textView_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:text="@string/subject_in_holder"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Monies.Currency"
+                        tools:text="@string/subject_in" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/subject_card_out"
+                    style="@style/Widget.Material3.CardView.Filled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/small_padding"
+                    app:cardBackgroundColor="@color/card_out_analysis_bg"
+                    app:cardCornerRadius="@dimen/small_padding"
+                    app:contentPadding="@dimen/smaller_padding">
+
+                    <TextView
+                        android:id="@+id/subject_textView_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/small_padding"
+                        android:text="@string/subject_out_holder"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Monies.Currency"
+                        tools:text="@string/subject_out" />
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_entries"
+                android:layout_width="match_parent"
+                android:layout_height="720dp"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:padding="@dimen/small_padding"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/layout_inOut"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                tools:listitem="@layout/item_subject_transaction" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

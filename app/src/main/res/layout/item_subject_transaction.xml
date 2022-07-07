@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Filled"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/smaller_padding"
+    app:cardCornerRadius="@dimen/small_padding"
+    app:contentPadding="@dimen/small_padding">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/item_subject_amt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/smaller_padding"
+            android:textAppearance="@style/TextAppearance.Monies.Currency"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="+KSH2,345.00" />
+
+        <TextView
+            android:id="@+id/item_subject_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_padding"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/item_subject_amt"
+            tools:text="10:23AM" />
+
+        <TextView
+            android:id="@+id/item_subject_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/message_background"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+            android:padding="@dimen/small_padding"
+            android:textColor="@color/grey_text"
+            android:textIsSelectable="true"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/item_subject_amt"
+            tools:text="PEM09A98O0 Confirmed.on 22/5/21 at 6:07 PMWithdraw Ksh15,000.00 from 208816 - Sulubei Communications munyu road near kenya mpya Agg New M-PESA balance is Ksh21,144.00. Transaction cost, Ksh162.00." />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/item_ctg"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_padding"
+            android:text="@string/assign_category"
+            android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+            android:textColor="@color/in_out"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_subject_msg" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_subject_copyCode"
+            style="@style/Widget.Material3.Chip.Assist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_subject_msg"
+            android:text="Copy Message" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,17 @@
+
+l
+java:S1104"QMake count a static final constant or non-public and provide accessors if needed.(‡›µœøÿÿÿÿ
+f
+java:S1104"PMake name a static final constant or non-public and provide accessors if needed.( þÍ¾
+h
+java:S1104	"RMake amount a static final constant or non-public and provide accessors if needed.(±±õÏ
+g
+java:S1104
+"QMake share a static final constant or non-public and provide accessors if needed.(Ô¡¿‚
+r
+java:S1104"PMake isIn a static final constant or non-public and provide accessors if needed.(Ï…¥¯úÿÿÿÿ8‹ÄâÈ“0
+*
+java:S1700
+"Rename field "share"(Ô¡¿‚
+O
+java:S1117"9Rename "share" which hides the field declared at line 10.(‘Ê«¤

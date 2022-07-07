@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.CategoryDefineFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/define_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:liftOnScroll="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:menu="@menu/define_menu"
+                app:navigationIcon="@drawable/ic_close"
+                app:title="@string/category_define"
+                app:titleCentered="true" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_define_exp"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:textStyle="bold"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:drawableEnd="@drawable/ic_add_circle"
+            android:padding="@dimen/small_padding"
+            android:text="@string/expenditure"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/define_app_bar" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_define_exp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            app:layout_constraintTop_toBottomOf="@id/text_define_exp"
+            android:padding="@dimen/small_padding"
+            app:singleLine="false"
+            app:singleSelection="false" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_define_inc"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:padding="@dimen/small_padding"
+            android:drawableEnd="@drawable/ic_add_circle"
+            android:text="@string/income"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chip_group_define_exp" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_define_inc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            android:padding="@dimen/small_padding"
+            app:layout_constraintTop_toBottomOf="@id/text_define_inc"
+            app:singleLine="false"
+            app:singleSelection="false" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

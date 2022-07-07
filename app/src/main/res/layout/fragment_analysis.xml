@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AnalysisFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_in"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/small_padding"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:layout_marginEnd="@dimen/small_padding"
+            app:cardBackgroundColor="@color/card_in_analysis_bg"
+            app:cardCornerRadius="@dimen/small_padding"
+            app:contentPadding="@dimen/smaller_padding"
+            app:layout_constraintEnd_toStartOf="@id/card_out"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/analysis_text_inc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/income"
+                    android:textAppearance="@style/TextAppearance.Monies.Text"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/in_amt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_padding"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Monies.Currency"
+                    android:textColor="@color/card_in_analysis_text"
+                    app:autoSizeTextType="uniform"
+                    tools:text="KSH 43,456.78" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_out"
+            style="@style/Widget.Material3.CardView.Filled"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/small_padding"
+            android:layout_marginStart="@dimen/small_padding"
+            android:layout_marginEnd="@dimen/activity_vertical_margin"
+            app:cardBackgroundColor="@color/card_out_analysis_bg"
+            app:cardCornerRadius="@dimen/small_padding"
+            app:contentPadding="@dimen/smaller_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/card_in"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/analysis_text_exp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="@string/expenditure"
+                    android:textAppearance="@style/TextAppearance.Monies.Text"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/out_amt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/small_padding"
+                    android:maxLines="1"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Monies.Currency"
+                    android:textColor="@color/card_out_analysis_text"
+                    app:autoSizeTextType="uniform"
+                    app:layout_constraintEnd_toEndOf="@id/analysis_text_exp"
+                    app:layout_constraintTop_toBottomOf="@id/analysis_text_exp"
+                    tools:text="KSH 43,456.78" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/analysis_piechart"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            app:layout_constraintTop_toBottomOf="@id/card_in" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_category"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/activity_vertical_margin"
+            android:layout_marginStart="@dimen/activity_vertical_margin"
+            android:background="@drawable/search_background"
+            app:layout_constraintEnd_toStartOf="@id/toggle_grid_linear"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analysis_piechart" />
+
+        <Button
+            android:id="@+id/toggle_grid_linear"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="@dimen/small_padding"
+            android:padding="@dimen/small_padding"
+            app:icon="@drawable/ic_round_view_list_24"
+            app:iconSize="32dp"
+            app:iconTint="?attr/colorControlNormal"
+            app:layout_constraintBottom_toBottomOf="@id/search_category"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/search_category"
+            app:layout_constraintTop_toTopOf="@id/search_category" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/analysis_recycler_categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_padding"
+            app:layout_constraintTop_toBottomOf="@id/search_category"
+            tools:listitem="@layout/recycleritem_analysis_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

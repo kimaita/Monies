@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/small_padding"
+    android:layout_marginVertical="@dimen/smaller_padding"
+    android:padding="@dimen/small_padding">
+
+    <TextView
+        android:id="@+id/item_mpesa_initials"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/initials_bg"
+        android:padding="@dimen/small_padding"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:padding="@dimen/small_padding"
+        android:id="@+id/item_mpesa_copy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/item_mpesa_msg"
+        android:src="@drawable/ic_copy"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/item_mpesa_initials"
+        app:layout_constraintStart_toStartOf="@id/item_mpesa_initials"
+        app:layout_constraintTop_toTopOf="@id/item_mpesa_msg"
+        app:layout_constraintBottom_toBottomOf="@id/item_mpesa_msg"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_mpesa_reci_num"
+        style="@style/TextAppearance.Monies.ListName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/activity_vertical_margin"
+        android:layout_marginStart="@dimen/small_padding"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/small_padding"
+        android:textColor="@color/name_text"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintStart_toEndOf="@id/item_mpesa_initials"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/item_mpesa_amt"
+        app:textAllCaps="true"
+        tools:text="@tools:sample/full_names" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_mpesa_amt"
+        style="@style/TextAppearance.Monies.Currency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/smaller_padding"
+        android:textAlignment="viewEnd"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/item_mpesa_reci_num"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/item_mpesa_reci_num"
+        tools:text="-KSH 140,500.00" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_mpesa_time"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/smaller_padding"
+        android:textAlignment="viewEnd"
+        android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+        android:textColor="@color/grey_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_mpesa_amt"
+        tools:text="12:59AM" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_mpesa_msg"
+        style="@style/TextAppearance.Material3.BodySmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/message_body_background"
+        android:padding="@dimen/small_padding"
+        android:textColor="@color/grey_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/item_mpesa_initials"
+        app:layout_constraintTop_toBottomOf="@id/item_ctg"
+        tools:text="PEM09A98O0 Confirmed.on 22/5/21 at 6:07 PMWithdraw Ksh15,000.00 from 208816 - Sulubei Communications munyu road near kenya mpya Agg New M-PESA balance is Ksh21,144.00. Transaction cost, Ksh162.00." />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/item_ctg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/dot"
+        android:drawablePadding="@dimen/smaller_padding"
+        android:paddingHorizontal="@dimen/small_padding"
+        android:paddingBottom="@dimen/small_padding"
+        android:paddingTop="@dimen/smaller_padding"
+        android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
+        app:layout_constraintStart_toEndOf="@id/item_mpesa_initials"
+        app:layout_constraintTop_toBottomOf="@id/item_mpesa_reci_num"
+        tools:text="Utilities" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

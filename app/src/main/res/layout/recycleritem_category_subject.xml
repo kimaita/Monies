@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/small_padding">
+
+    <TextView
+        android:id="@+id/subject_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="2"
+        android:padding="@dimen/small_padding"
+        android:textAppearance="@style/TextAppearance.Monies.Text"
+        app:layout_constraintEnd_toStartOf="@id/subject_spend"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/full_names" />
+
+    <TextView
+        android:id="@+id/subject_spend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding"
+        android:textAppearance="@style/TextAppearance.Monies.Currency"
+        app:layout_constraintBaseline_toBaselineOf="@id/subject_name"
+        app:layout_constraintBottom_toBottomOf="@id/subject_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/subject_name"
+        tools:text="KSH34,556.80" />
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/subject_progress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_padding"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/subject_name"
+        app:trackCornerRadius="@dimen/smaller_padding"
+        app:trackThickness="@dimen/small_padding"
+        tools:max="1000"
+        tools:progress="400" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

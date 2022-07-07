@@ -1,0 +1,12 @@
+
+U
+java:S11617":Add the "@Override" annotation above this method signature(ÿ£º¡ÿÿÿÿÿ
+G
+java:S1874…"0Remove this use of "getColor"; it is deprecated.(¦§•
+R	java:S125"<This block of commented-out lines of code should be removed.(ìÓ…
+L
+java:S1874›"0Remove this use of "getColor"; it is deprecated.(âÍçıÿÿÿÿ
+W	java:S125¤"<This block of commented-out lines of code should be removed.(¿®Ğüÿÿÿÿ
+R	java:S125Ï"<This block of commented-out lines of code should be removed.(ŠŠ¢ê
+K
+java:S1144ª"4Remove this unused private "createGraphData" method.(°¾°–

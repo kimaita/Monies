@@ -1,0 +1,7 @@
+
+r
+java:S1104­"OMake amt a static final constant or non-public and provide accessors if needed.(Ğ‹é³øÿÿÿÿ8ª÷¡—0
+t
+java:S1104®"QMake count a static final constant or non-public and provide accessors if needed.(†Í˜Åıÿÿÿÿ8ª÷¡—0
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š×¥öÿÿÿÿÿ
+^	java:S125·"<This block of commented-out lines of code should be removed.(øÕ øÿÿÿÿ8œ´¥®—0

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="def_categories">
+        <item name="meals">Meals</item>
+        <item name="groceries">Groceries</item>
+        <item name="water_bill">Water Bill</item>
+        <item name="elec_bill">Electricity</item>
+        <item name="rent">Rent</item>
+        <item name="religious">Religious</item>
+        <item name="school_fees">School Fees</item>
+        <item name="airtime">Airtime</item>
+        <item name="transport">Transport</item>
+        <item name="medical">Medical</item>
+        <item name="loan_repayment">Loan Repayment</item>
+        <item name="people">People</item>
+        <item name="leisure_amp_recreation">Leisure &amp; Recreation</item>
+        <item name="house_items">House Items</item>
+        <item name="clothing_amp_accessories">Clothing &amp; Accessories</item>
+        <item name="beauty">Beauty</item>
+    </string-array>
+    <string-array name="def_incomes">
+        <item name="salary">Salary</item>
+        <item name="dividends">Dividends</item>
+        <item name="business">Business</item>
+        <item name="gift">Gifts</item>
+        <item name="pocket_money">Pocket Money</item>
+    </string-array>
+</resources>

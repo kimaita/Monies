@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.kimaita.monies.ui.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_subjectEntriesListFragment"
+            app:destination="@id/subjectEntriesListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_analysis"
+        android:name="com.kimaita.monies.ui.AnalysisFragment"
+        android:label="@string/title_analysis"
+        tools:layout="@layout/fragment_analysis">
+        <action
+            android:id="@+id/action_navigation_analysis_to_analysisDetailFragment"
+            app:destination="@id/analysisDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryDefineFragment"
+        android:name="com.kimaita.monies.ui.CategoryDefineFragment"
+        android:label="fragment_define_category"
+        tools:layout="@layout/fragment_define_category" />
+    <fragment
+        android:id="@+id/assignCategoriesFragment"
+        android:name="com.kimaita.monies.ui.AssignCategoriesFragment"
+        android:label="fragment_assign_categories"
+        tools:layout="@layout/fragment_assign_categories">
+        <action
+            android:id="@+id/action_assignCategoriesFragment_to_subjectEntriesListFragment"
+            app:destination="@id/subjectEntriesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.kimaita.monies.ui.SettingsFragment"
+        android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/analysisDetailFragment"
+        android:name="com.kimaita.monies.ui.AnalysisDetailFragment"
+        android:label="fragment_analysis_detail"
+        tools:layout="@layout/fragment_analysis_detail">
+        <argument
+            android:name="category"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_analysisDetailFragment_to_subjectEntriesListFragment"
+            app:destination="@id/subjectEntriesListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/subjectEntriesListFragment"
+        android:name="com.kimaita.monies.ui.SubjectEntriesListFragment"
+        android:label="fragment_subject_entries_list"
+        tools:layout="@layout/fragment_subject_entries_list">
+        <argument
+            android:name="subject"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

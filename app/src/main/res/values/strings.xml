@@ -1,0 +1,114 @@
+<resources>
+    <string name="app_name">Monies</string>
+    <string name="hint_amount">Amount…</string>
+    <string name="button_save">Save</string>
+    <string name="income">Income</string>
+    <string name="expenditure">Expenditure</string>
+    <string name="title_mpesa">M-PESA</string>
+    <string name="title_analysis">Analysis</string>
+    <string name="title_home">Dashboard</string>
+    <string name="cat_define_desc">Define your categories here. Select as many categories as you think you will need or even create your own categories.</string>
+    <string name="tab_label1">Transactions</string>
+    <string name="title_activity_home">MainActivity</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+    <string name="pick_date">Please Pick a Date</string>
+    <string name="date">Date</string>
+    <string name="expense">Expense</string>
+    <string name="ksh">Ksh</string>
+    <string name="amount_transacted">Amount Transacted…</string>
+    <string name="transactions">Transactions</string>
+    <string name="recent_transactions">Recent Transactions</string>
+    <string name="recent_type_transactions">Recent %s</string>
+    <string name="transaction_costs">Transaction Costs</string>
+    <string name="withdrawals">Withdrawals</string>
+    <string name="sent">Sent</string>
+    <string name="tills_amp_paybills"><![CDATA[Tills & Paybills]]></string>
+    <string name="hello_text">Hello There,\nWe need to get a few things set up for this app. Grant the requested SMS permission to allow the app fetch and use your M-PESA messages.\nThen define categories for your entries.</string>
+    <string name="category_edit">Edit Categories</string>
+    <string name="category_define">Define Categories</string>
+    <string name="edit_type">You can edit, add or remove definitions from here. Tap a chip to edit, swipe left to delete or tap the add icon to add new definitions.</string>
+    <string name="create_ctg">Create own category</string>
+    <string name="done">Done</string>
+    <string name="done_description">Save selected choices</string>
+    <string name="failed_add">Failed to add.</string>
+    <string name="success_add">Successfully added.</string>
+    <string name="success_add_entry">Successfully added %s %s.</string>
+    <string name="categories">Categories</string>
+    <string name="category_hint">Category Name</string>
+    <string name="category_select">Select Category For All</string>
+    <string name="date_select">Pick A Date</string>
+    <string name="start_date_select">Start Date</string>
+    <string name="end_date_select">End Date</string>
+    <string name="entries_count">%d Entries</string>
+    <string name="proceed">Proceed</string>
+    <string name="assign_categories">Assign Categories</string>
+    <string name="assign_category">Assign Category</string>
+    <string name="view_entries">View Transactions</string>
+    <string name="assign_ctg_desc">Assign categories to your M-PESA transactions.</string>
+    <string name="assign_count_share">%s Entries\n %s</string>
+    <string name="create_entry">Create Entry</string>
+    <string name="empty_amount">Please Enter an Amount</string>
+    <string name="empty_name">Please Enter a Name</string>
+    <string name="current_spend">Current Spending: %s</string>
+    <string name="total_spend">Total Spent: %s</string>
+    <string name="target_amount">Target: %s</string>
+    <string name="target_period">%s - %s</string>
+    <string name="define_period">Select range of Dates</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="ongoing_targets">Ongoing Targets</string>
+    <string name="previous">Previous</string>
+    <string name="previous_targets">Previous Targets</string>
+    <string name="predictions">Predictions</string>
+    <string name="one_day">1D</string>
+    <string name="past_day">Past 24HRS</string>
+    <string name="one_week">1W</string>
+    <string name="past_week">Past Week</string>
+    <string name="one_month">1M</string>
+    <string name="past_month">Past Month</string>
+    <string name="custom">Custom</string>
+    <string name="all">ALL</string>
+    <string name="transaction_vol">Transaction Volume</string>
+    <string name="transaction_count">Transaction Count</string>
+    <string name="current_balance">Current Balance:</string>
+    <string name="go_to_settings">Go to Settings</string>
+    <string name="settings">Settings</string>
+    <string name="notifications">Notifications</string>
+    <string name="bal_format">(%s)</string>
+    <string name="in_format">+ %s</string>
+    <string name="out_format">- %s</string>
+    <string name="growth_format">%s(%s)</string>
+    <string name="neg_growth_format_ctg">%s over last month</string>
+    <string name="pos_growth_format_ctg">+%s over last month</string>
+    <string name="top_subject">Top Subject</string>
+    <string name="growth">Growth Over Last</string>
+    <string name="activity_graph">Activity Graph</string>
+    <string name="update_ctg">Update %d Entries\' Category</string>
+    <string name="update_ctg_init">Update Entry Category</string>
+    <string name="subject_in">IN\n%d Entries\n%s</string>
+    <string name="subject_in_holder">IN\n—</string>
+    <string name="subject_out">OUT\n%d Entries\n%s</string>
+    <string name="subject_out_holder">OUT\n—</string>
+    <string name="subject_name">%s\n%s</string>
+    <string name="copy_code">Copy %s</string>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="create">Create</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

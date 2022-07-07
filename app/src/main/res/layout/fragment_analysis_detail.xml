@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AnalysisDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/analysis_dets_app_bar"
+            style="@style/Widget.Material3.AppBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:liftOnScroll="true">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/analysis_dets_toolBar"
+                style="@style/Widget.Material3.Toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="@drawable/ic_close"
+                tools:title="Category" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <TextView
+            android:id="@+id/analysis_dets_graph_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/activity_vertical_margin"
+            android:paddingVertical="@dimen/small_padding"
+            android:text="@string/activity_graph"
+            android:textAppearance="@style/TextAppearance.Material3.TitleSmall"
+            android:textColor="@color/grey_text"
+            app:layout_constraintBaseline_toBaselineOf="@id/analysis_dets_period"
+            app:layout_constraintBottom_toTopOf="@id/analysis_dets_barChart"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/analysis_dets_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/activity_vertical_margin"
+            android:textAppearance="@style/TextAppearance.Monies.Currency"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analysis_dets_app_bar"
+            tools:text="KSH39,445.00" />
+
+        <TextView
+            android:id="@+id/analysis_dets_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/smaller_padding"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/activity_vertical_margin"
+            android:paddingVertical="@dimen/small_padding"
+            android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
+            app:drawableEndCompat="@drawable/ic_calendar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analysis_dets_amount"
+            tools:text="9SEP - 27SEP 2022" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/analysis_dets_barChart"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_margin="@dimen/small_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analysis_dets_period" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/analysis_dets_recyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/analysis_dets_barChart"
+            tools:listitem="@layout/recycleritem_category_subject" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

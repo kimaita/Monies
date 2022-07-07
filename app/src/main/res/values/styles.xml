@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomDatePickerDialogTheme" parent="android:Theme.Material.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:datePickerMode">calendar</item>
+    </style>
+
+    <style name="TextAppearance.Monies.Currency" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/sora_variable</item>
+        <item name="android:typeface">monospace</item>
+    </style>
+
+    <style name="TextAppearance.Monies.Text" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/louis_george_cafe</item>
+    </style>
+
+    <style name="TextAppearance.Monies.ListName" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/louis_george_cafe_bold</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Monies.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Monies.CornerSize20Percent" parent="">
+        <item name="cornerSize">15%</item>
+    </style>
+
+    <style name="Theme.Monies.MPESACards" parent="Widget.Material3.CardView.Outlined">
+        <item name="contentPadding">2dp</item>
+        <item name="strokeWidth">0.5dp</item>
+        <item name="layout_columnWeight">1</item>
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Monies" parent="ShapeAppearance.Material3.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
+    </style>
+
+    <style name="ModalBottomSheetDialog" parent="Widget.Material3.BottomSheet.Modal">
+        <!--shapeAppearance should be a reference to a theme attribute eg shapeAppearanceLargeComponent-->
+        <item name="shapeAppearance">@style/ShapeAppearanceOverlay.Monies</item>
+    </style>
+
+    <style name="ThemeOverlay.Monies.BottomSheet" parent="ThemeOverlay.Material3.DayNight.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Monies.BottomSheet</item>
+    </style>
+
+    <style name="Widget.Monies.BottomSheet" parent="Widget.Material3.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Monies</item>
+    </style>
+</resources>

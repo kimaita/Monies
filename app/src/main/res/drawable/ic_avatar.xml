@@ -1,0 +1,48 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="640dp"
+    android:height="480dp"
+    android:autoMirrored="true"
+    android:viewportWidth="640"
+    android:viewportHeight="480">
+    <path android:pathData="m518.9,563.32c0,144.91 -502.9,144.91 -502.9,0s112.58,-262.38 251.45,-262.38 251.45,117.47 251.45,262.38z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="427.65"
+                android:endY="717.56"
+                android:startX="107.25"
+                android:startY="365.89"
+                android:type="linear">
+                <item
+                    android:color="#FFFFFFFF"
+                    android:offset="0" />
+                <item
+                    android:color="#FF9D9FA1"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="m366.22,321.32l-97.26,340.54 -100.11,-340.6c-89.86,40.01 -152.84,133.04 -152.84,241.43 0,144.91 502.9,144.91 502.9,0 0,-108.32 -62.91,-201.3 -152.68,-241.36z" />
+    <path android:pathData="M99.82,190.96a167.63,174.92 0,1 0,335.26 0a167.63,174.92 0,1 0,-335.26 0z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:endX="146.23"
+                android:endY="70.35"
+                android:startX="388.67"
+                android:startY="314.99"
+                android:type="linear">
+                <item
+                    android:color="#FFD6A477"
+                    android:offset="0" />
+                <item
+                    android:color="#FFE4C3A8"
+                    android:offset="1" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#3f3f3f"
+        android:pathData="m435.08,256.73c-23.31,7.08 0,-196.57 -228.53,-116.11 -6.22,0.55 -15.98,-20.48 -64.83,-14.87 -6.18,0.71 -23.95,12.52 -30.14,13.13 -19.8,1.85 -9.9,-20.3 -4.06,-31.97 2.95,-6.58 6.57,-12.95 10.81,-19.05 29.66,-42.67 89.44,-71.82 158.34,-71.82 98.44,0 176.63,43.73 158.4,240.52" />
+</vector>
