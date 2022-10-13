@@ -3,12 +3,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
+    compileSdkVersion 33
 
     defaultConfig {
         applicationId "com.kimaita.monies"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
         javaCompileOptions {
@@ -38,21 +38,23 @@ android {
 
 apply plugin: "androidx.navigation.safeargs"
 dependencies {
-    def room_version = "2.4.2"
-    def nav_version = "2.4.2"
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    def room_version = "2.4.3"
+    def nav_version = "2.5.2"
 
     implementation 'androidx.palette:palette:1.0.0'
-    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
+
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"
     implementation "androidx.gridlayout:gridlayout:1.0.0"
-    implementation 'androidx.lifecycle:lifecycle-livedata:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.4.1'
-    implementation "androidx.lifecycle:lifecycle-common-java8:2.4.1"
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-livedata:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel:2.5.1'
+    implementation "androidx.lifecycle:lifecycle-common-java8:2.5.1"
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'androidx.preference:preference:1.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
