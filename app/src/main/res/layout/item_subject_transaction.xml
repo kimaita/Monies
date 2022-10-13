@@ -2,11 +2,10 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Widget.Material3.CardView.Filled"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/small_padding"
     android:layout_marginVertical="@dimen/smaller_padding"
-    app:cardCornerRadius="@dimen/small_padding"
     app:contentPadding="@dimen/small_padding">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +18,6 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/smaller_padding"
             android:textAppearance="@style/TextAppearance.Monies.Currency"
-            android:textSize="15sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="+KSH2,345.00" />
@@ -39,8 +37,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/message_background"
-            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             android:padding="@dimen/small_padding"
+            android:textAppearance="@style/TextAppearance.Material3.BodySmall"
             android:textColor="@color/grey_text"
             android:textIsSelectable="true"
             android:visibility="gone"
@@ -51,7 +49,7 @@
             android:id="@+id/item_ctg"
             android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/small_padding"
+            android:layout_margin="@dimen/smaller_padding"
             android:text="@string/assign_category"
             android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
             android:textColor="@color/in_out"
@@ -65,11 +63,11 @@
             style="@style/Widget.Material3.Chip.Assist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:text="Copy Message"
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_subject_msg"
-            android:text="Copy Message" />
+            app:layout_constraintTop_toBottomOf="@id/item_subject_msg" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

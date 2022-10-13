@@ -9,16 +9,14 @@
         android:id="@+id/text_date_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/small_padding"
         android:layout_marginTop="@dimen/small_padding"
         android:fontFamily="@font/sora_variable"
-        android:layout_marginStart="@dimen/small_padding"
-        android:paddingHorizontal="@dimen/small_padding"
-        android:textAppearance="@style/TextAppearance.Material3.LabelLarge"
-        android:textStyle="bold"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.Material3.LabelSmall"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="10 Sept, 2020" />
-
 
 </RelativeLayout>
