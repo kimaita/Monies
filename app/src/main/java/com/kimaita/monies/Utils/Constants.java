@@ -4,23 +4,36 @@ import com.kimaita.monies.R;
 
 public class Constants {
 
+    private Constants() {
+        throw new IllegalStateException("Utility class");
+    }
+
+
     public static final String TILLS_PAYBILLS = "Tills & Paybills";
     public static final String TILL = "Business Till";
     public static final String PAYBILLS = "Paybills";
     public static final String AIRTIME = "Airtime";
     public static final String FULIZA = "Fuliza";
+    public static final String FULIZA_LOAN = "Fuliza Loan";
+    public static final String FULIZA_PAYMENT = "Fuliza Repayment";
     public static final String RECEIVED = "Received";
     public static final String SENT = "Sent";
     public static final String CASH_WITHDRAWAL = "Withdrawals";
-    public static final String MSHWARI_WITHDRAWAL = "M-Shwari Withdrawals";
     public static final String CASH_DEPOSIT = "Deposits";
-    public static final String MSHWARI_DEPOSIT = "M-Shwari Deposits";
     public static final String MSHWARI = "M-Shwari";
+    public static final String MSHWARI_WITHDRAWAL = "M-Shwari Withdrawals";
+    public static final String MSHWARI_DEPOSIT = "M-Shwari Deposits";
+
     public static final int PERIOD_DAY = 1;
     public static final int PERIOD_WEEK = 7;
     public static final int PERIOD_MONTH = 30;
 
-    public static int[] colors = {
+    public static final String[] types = {
+            TILLS_PAYBILLS, AIRTIME, FULIZA_LOAN, FULIZA_PAYMENT,
+            RECEIVED, SENT, CASH_WITHDRAWAL, CASH_DEPOSIT, MSHWARI_DEPOSIT, MSHWARI_WITHDRAWAL
+    };
+
+    public static final int[] colors = {
             R.color.card_airtime,
             R.color.card_deposit,
             R.color.card_fuliza,
