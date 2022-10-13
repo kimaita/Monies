@@ -47,10 +47,6 @@ public class AnalysisDetailFragment extends Fragment {
     SubjectNatureTotalAdapter adapter;
 
 
-    public static AnalysisDetailFragment newInstance() {
-        return new AnalysisDetailFragment();
-    }
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,8 +76,7 @@ public class AnalysisDetailFragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(AnalysisDetailViewModel.class);
         moneyViewModel = new ViewModelProvider(this).get(MoneyViewModel.class);
 
-        binding.analysisDetsToolBar.setNavigationOnClickListener(view1 -> Navigation.findNavController(view1).navigateUp());
-        binding.analysisDetsToolBar.setTitle(mCategory);
+        //binding.analysisDetsToolBar.setTitle(mCategory);
         binding.analysisDetsRecyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
 
         Calendar c = Calendar.getInstance();
@@ -160,7 +155,7 @@ public class AnalysisDetailFragment extends Fragment {
 
         // scaling can now only be done on x- and y-axis separately
         chart.setPinchZoom(false);
-        //chart.setAutoScaleMinMaxEnabled(true);
+
         chart.setDrawGridBackground(false);
         chart.setDrawBarShadow(false);
         chart.setDrawBorders(false);
@@ -183,8 +178,6 @@ public class AnalysisDetailFragment extends Fragment {
         xLabels.mDecimals = 0;
         xLabels.setPosition(XAxis.XAxisPosition.BOTTOM);
 
-        // chart.setDrawXLabels(false);
-        // chart.setDrawYLabels(false);
         Legend l = chart.getLegend();
         l.setTextColor(getResources().getColor(R.color.text));
         l.setVerticalAlignment(Legend.LegendVerticalAlignment.BOTTOM);
@@ -219,19 +212,13 @@ public class AnalysisDetailFragment extends Fragment {
         dataSets.add(set1);
 
         BarData data = new BarData(dataSets);
-        //data.setValueFormatter(new AxisValueFormatter());
         data.setValueTextColor(getResources().getColor(R.color.text));
 
         return data;
     }
 
     private int[] getColors() {
-
-        // have as many colors as stack-values per entry
         int[] colors = new int[2];
-        /*colors[0] = R.color.income;
-        colors[1] = R.color.expenses;*/
-
         System.arraycopy(ColorTemplate.MATERIAL_COLORS, 0, colors, 0, 2);
         return colors;
     }

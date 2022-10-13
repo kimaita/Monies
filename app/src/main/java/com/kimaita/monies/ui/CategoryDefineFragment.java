@@ -1,5 +1,7 @@
 package com.kimaita.monies.ui;
 
+import static com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_INDEFINITE;
+import static com.google.android.material.snackbar.BaseTransientBottomBar.LENGTH_LONG;
 import static com.kimaita.monies.Utils.Utils.addChip;
 import static com.kimaita.monies.Utils.Utils.populateChips;
 
@@ -25,6 +27,7 @@ import com.kimaita.monies.viewmodels.MoneyViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CategoryDefineFragment extends Fragment implements CreateCategoryDialogFragment.CreateCategoryDialogListener {
 
@@ -58,15 +61,13 @@ public class CategoryDefineFragment extends Fragment implements CreateCategoryDi
         populateChips(getResources().getStringArray(R.array.def_categories), binding.chipGroupDefineExp, this);
         populateChips(getResources().getStringArray(R.array.def_incomes), binding.chipGroupDefineInc, this);
 
-        binding.topAppBar.setOnMenuItemClickListener(item -> {
+        /*binding.topAppBar.setOnMenuItemClickListener(item -> {
             if (item.getItemId() == R.id.menu_define_done) {
                 getInsertCtgSelections();
                 return true;
             }
             return false;
-        });
-
-        binding.topAppBar.setNavigationOnClickListener(view1 -> Navigation.findNavController(view1).navigateUp());
+        });*/
 
         binding.textDefineExp.setOnClickListener(view12 -> showNoticeDialog(false));
         binding.textDefineInc.setOnClickListener(view12 -> showNoticeDialog(true));
@@ -102,11 +103,11 @@ public class CategoryDefineFragment extends Fragment implements CreateCategoryDi
         try {
             defineViewModel.insertCategory(categoryArrayList.toArray(new Category[0]));
 
-            Snackbar.make(requireView(), getString(R.string.success_add), Snackbar.LENGTH_LONG)
+            Snackbar.make(requireView(), getString(R.string.success_add), LENGTH_LONG)
                     .setAction(R.string.done, view1 -> Navigation.findNavController(view1).navigate(R.id.navigation_home))
                     .show();
         } catch (Exception e) {
-            Snackbar.make(requireView(), R.string.failed_add, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(requireView(), R.string.failed_add, LENGTH_INDEFINITE)
                     .setAction("Retry", view12 -> getInsertCtgSelections())
                     .show();
             Log.e("CategoryDefineFragment", "Failed to insert into Database");
@@ -133,7 +134,7 @@ public class CategoryDefineFragment extends Fragment implements CreateCategoryDi
 
     @Override
     public void onDialogNegativeClick(DialogFragment dialog) {
-        dialog.getDialog().cancel();
+        Objects.requireNonNull(dialog.getDialog()).cancel();
     }
 }
 

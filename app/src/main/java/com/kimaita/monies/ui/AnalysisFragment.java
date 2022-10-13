@@ -28,7 +28,6 @@ import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.PercentFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
-import com.google.android.material.button.MaterialButton;
 import com.kimaita.monies.R;
 import com.kimaita.monies.adapters.AnalysisCategoryListAdapter;
 import com.kimaita.monies.adapters.ShareAdapter;
@@ -48,10 +47,7 @@ public class AnalysisFragment extends Fragment {
     MoneyViewModel moneyViewModel;
     AnalysisViewModel analysisViewModel;
 
-    public static Fragment newInstance() {
-        return new AnalysisFragment();
-    }
-
+    @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentAnalysisBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -63,21 +59,22 @@ public class AnalysisFragment extends Fragment {
 
         moneyViewModel = new ViewModelProvider(this).get(MoneyViewModel.class);
         analysisViewModel = new ViewModelProvider(this).get(AnalysisViewModel.class);
-        MaterialButton btn = (MaterialButton) binding.toggleGridLinear;
+
 
         AnalysisCategoryListAdapter adapter = new AnalysisCategoryListAdapter(new ShareAdapter.ShareDiff(), requireContext());
         binding.analysisRecyclerCategories.setAdapter(adapter);
         binding.analysisRecyclerCategories.setLayoutManager(new GridLayoutManager(requireContext(), 2));
         analysisViewModel.setIsGrid(true);
-        binding.toggleGridLinear.setOnClickListener(view13 -> analysisViewModel.setIsGrid(Boolean.FALSE.equals(analysisViewModel.getIsGrid().getValue())));
+        // MaterialButton btn = (MaterialButton) binding.toggleGridLinear;
+        //binding.toggleGridLinear.setOnClickListener(view13 -> analysisViewModel.setIsGrid(Boolean.FALSE.equals(analysisViewModel.getIsGrid().getValue())));
 
         analysisViewModel.getIsGrid().observe(getViewLifecycleOwner(), aBoolean -> {
             if (aBoolean) {
                 binding.analysisRecyclerCategories.setLayoutManager(new LinearLayoutManager(requireContext()));
-                btn.setIconResource(R.drawable.ic_sharp_grid_on_24);
+          //      btn.setIconResource(R.drawable.ic_sharp_grid_on_24);
             } else {
                 binding.analysisRecyclerCategories.setLayoutManager(new GridLayoutManager(requireContext(), 2));
-                btn.setIconResource(R.drawable.ic_round_view_list_24);
+                //btn.setIconResource(R.drawable.ic_round_view_list_24);
             }
         });
 

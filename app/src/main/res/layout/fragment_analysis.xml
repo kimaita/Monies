@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card_in"
             style="@style/Widget.Material3.CardView.Filled"
@@ -60,7 +61,6 @@
             style="@style/Widget.Material3.CardView.Filled"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/small_padding"
             android:layout_marginStart="@dimen/small_padding"
             android:layout_marginEnd="@dimen/activity_vertical_margin"
             app:cardBackgroundColor="@color/card_out_analysis_bg"
@@ -68,7 +68,7 @@
             app:contentPadding="@dimen/smaller_padding"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/card_in"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="@id/card_in">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,7 +109,7 @@
             android:layout_margin="@dimen/activity_vertical_margin"
             app:layout_constraintTop_toBottomOf="@id/card_in" />
 
-        <androidx.appcompat.widget.SearchView
+       <!-- <androidx.appcompat.widget.SearchView
             android:id="@+id/search_category"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -119,8 +119,8 @@
             app:layout_constraintEnd_toStartOf="@id/toggle_grid_linear"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/analysis_piechart" />
-
-        <Button
+-->
+       <!-- <Button
             android:id="@+id/toggle_grid_linear"
             style="@style/Widget.Material3.Button.IconButton"
             android:layout_width="wrap_content"
@@ -130,17 +130,17 @@
             app:icon="@drawable/ic_round_view_list_24"
             app:iconSize="32dp"
             app:iconTint="?attr/colorControlNormal"
-            app:layout_constraintBottom_toBottomOf="@id/search_category"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/search_category"
             app:layout_constraintTop_toTopOf="@id/search_category" />
-
+-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/analysis_recycler_categories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_padding"
-            app:layout_constraintTop_toBottomOf="@id/search_category"
+            app:layout_constraintTop_toBottomOf="@id/analysis_piechart"
             tools:listitem="@layout/recycleritem_analysis_card" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

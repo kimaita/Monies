@@ -6,29 +6,10 @@
     android:layout_height="match_parent"
     tools:context=".ui.AnalysisDetailFragment">
 
+    <!--tools:title="Category"-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/analysis_dets_app_bar"
-            style="@style/Widget.Material3.AppBarLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:liftOnScroll="true">
-
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/analysis_dets_toolBar"
-                style="@style/Widget.Material3.Toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:navigationIcon="@drawable/ic_close"
-                tools:title="Category" />
-
-        </com.google.android.material.appbar.AppBarLayout>
 
         <TextView
             android:id="@+id/analysis_dets_graph_label"
@@ -52,7 +33,7 @@
             android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/analysis_dets_app_bar"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="KSH39,445.00" />
 
         <TextView

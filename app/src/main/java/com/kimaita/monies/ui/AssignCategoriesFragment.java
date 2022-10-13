@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.kimaita.monies.adapters.AssignCategoryAdapter;
@@ -23,18 +22,11 @@ import java.util.List;
 public class AssignCategoriesFragment extends Fragment {
 
     private FragmentAssignCategoriesBinding binding;
-    private MoneyViewModel defineViewModel;
 
     public AssignCategoriesFragment() {
         // Required empty public constructor
     }
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -47,7 +39,7 @@ public class AssignCategoriesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        defineViewModel = new ViewModelProvider(this).get(MoneyViewModel.class);
+        MoneyViewModel defineViewModel = new ViewModelProvider(this).get(MoneyViewModel.class);
 
         AssignCategoryAdapter mAdapter = new AssignCategoryAdapter(new AssignCategoryAdapter.ShareDiff(), requireContext(),
                 share -> {
@@ -61,7 +53,6 @@ public class AssignCategoriesFragment extends Fragment {
         binding.recyclerAssignCtg.setAdapter(mAdapter);
         binding.recyclerAssignCtg.setLayoutManager(new LinearLayoutManager(getContext()));
         defineViewModel.getUncategorizedMsgList().observe(getViewLifecycleOwner(), mAdapter::submitList);
-        binding.topAppBar.setNavigationOnClickListener(view1 -> Navigation.findNavController(view1).navigateUp());
 
     }
 }
