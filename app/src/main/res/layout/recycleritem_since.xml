@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/small_padding">
+
+    <TextView
+        android:id="@+id/text_dateTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.LabelMedium"
+        tools:text="11:23AM Thur, Jun 22" />
+
+    <TextView
+        android:id="@+id/text_amtSubject"
+        android:padding="@dimen/smaller_padding"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        tools:text="Sent KSH 300.00 to JAMES KIMAITA" />
+
+    <TextView
+        android:id="@+id/text_balance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/big_padding"
+        android:padding="@dimen/smaller_padding"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        tools:text="Balance: Ksh 700.00" />
+
+    <TextView
+        android:id="@+id/text_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/message_background"
+        android:padding="@dimen/small_padding"
+        android:textAppearance="@style/TextAppearance.Material3.BodySmall"
+        android:textColor="@color/grey_text"
+        android:textIsSelectable="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/item_subject_amt"
+        tools:text="PEM09A98O0 Confirmed.on 22/5/21 at 6:07 PMWithdraw Ksh15,000.00 from 208816 - Sulubei Communications munyu road near kenya mpya Agg New M-PESA balance is Ksh21,144.00. Transaction cost, Ksh162.00." />
+
+</LinearLayout>
