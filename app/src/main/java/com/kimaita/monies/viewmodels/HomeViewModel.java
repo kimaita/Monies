@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModel;
 public class HomeViewModel extends ViewModel {
 
     private final MutableLiveData<String> selectedNature = new MutableLiveData<>();
+    private final MutableLiveData<String> selectedType = new MutableLiveData<>();
     private final MutableLiveData<Integer> selectedPeriod = new MutableLiveData<>();
 
     public void setNature(@NonNull String nature) {
@@ -26,4 +27,11 @@ public class HomeViewModel extends ViewModel {
         return selectedPeriod;
     }
 
+    public LiveData<String> getSelectedType() {
+        return selectedType;
+    }
+
+    public void setSelectedType(@NonNull String type) {
+        selectedType.setValue(type);
+    }
 }
