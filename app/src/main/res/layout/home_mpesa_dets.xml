@@ -4,19 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingHorizontal="@dimen/small_padding"
+    android:padding="@dimen/small_padding"
+    android:layout_marginBottom="@dimen/small_padding"
+    android:layout_marginHorizontal="@dimen/smaller_padding"
     app:columnCount="2">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/small_padding"
         app:layout_columnWeight="1">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/icon_volume"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/ic_home_transaction_volume"
             app:tint="@color/transaction_vol" />
 
@@ -24,7 +25,7 @@
             android:id="@+id/transactionVolume_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/small_padding"
+            android:layout_marginStart="@dimen/smaller_padding"
             android:layout_toEndOf="@id/icon_volume"
             android:text="@string/transaction_vol"
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
@@ -39,20 +40,19 @@
             android:text="--"
             android:textAppearance="@style/TextAppearance.Monies.Currency"
             android:textColor="@color/grey_text"
+            android:textSize="12sp"
             tools:text="KSH12,344.00" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/small_padding"
-
         app:layout_columnWeight="1">
 
         <ImageView
             android:id="@+id/icon_count"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/ic_home_transaction_count"
             app:tint="@color/transaction_count" />
 
@@ -60,7 +60,7 @@
             android:id="@+id/transactionCount_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/small_padding"
+            android:layout_marginStart="@dimen/smaller_padding"
             android:layout_toEndOf="@id/icon_count"
             android:text="@string/transaction_count"
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
@@ -73,6 +73,7 @@
             android:layout_marginStart="@dimen/small_padding"
             android:layout_toEndOf="@id/icon_count"
             android:text="--"
+            android:textSize="12sp"
             android:textAppearance="@style/TextAppearance.Monies.Currency"
             android:textColor="@color/grey_text"
             tools:text="123" />
@@ -81,20 +82,20 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/small_padding"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         app:layout_columnWeight="1">
 
         <ImageView
             android:id="@+id/icon_trend"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/ic_home_pos_growth" />
 
         <TextView
             android:id="@+id/trend_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/small_padding"
+            android:layout_marginStart="@dimen/smaller_padding"
             android:layout_toEndOf="@id/icon_trend"
             android:text="@string/growth"
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
@@ -111,19 +112,20 @@
             android:textAppearance="@style/TextAppearance.Monies.Currency"
             android:textColor="@color/grey_text"
             app:autoSizeTextType="uniform"
+            android:textSize="12sp"
             tools:text="KSH2,345.66(12.8%)" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="@dimen/small_padding"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
         app:layout_columnWeight="1">
 
         <ImageView
             android:id="@+id/icon_top_subject"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:src="@drawable/ic_home_top_subject"
             app:tint="@color/top_subject" />
 
@@ -131,7 +133,7 @@
             android:id="@+id/topSubject_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/small_padding"
+            android:layout_marginStart="@dimen/smaller_padding"
             android:layout_toEndOf="@id/icon_top_subject"
             android:text="@string/top_subject"
             android:textAppearance="@style/TextAppearance.Material3.LabelMedium" />
@@ -149,6 +151,7 @@
             android:textAppearance="@style/TextAppearance.Monies.Currency"
             android:textColor="@color/grey_text"
             app:autoSizeTextType="uniform"
+            android:textSize="12sp"
             tools:text="@tools:sample/full_names" />
     </RelativeLayout>
 

@@ -8,8 +8,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_received"
-        style="@style/Theme.Monies.MPESACards"
-        android:contentDescription="Click to filter Received transactions.">
+        style="@style/Theme.Monies.MPESACards">
 
         <RelativeLayout
             android:layout_width="match_parent"
