@@ -7,6 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.HomeFragment">
 
+    <!--app:menu="@menu/home_menu"-->
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/swipe_refresh"
         android:layout_width="match_parent"
@@ -21,24 +23,6 @@
             android:gravity="center_horizontal"
             android:orientation="vertical">
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:id="@+id/home_app_bar"
-                style="@style/Widget.Material3.AppBarLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:liftOnScroll="true">
-
-                <com.google.android.material.appbar.MaterialToolbar
-                    android:id="@+id/home_toolBar"
-                    style="@style/Widget.Material3.Toolbar.OnSurface"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    app:menu="@menu/home_menu"
-                    app:title="@string/app_name" />
-
-            </com.google.android.material.appbar.AppBarLayout>
-
-
             <TextView
                 android:id="@+id/text_bal_label"
                 android:layout_width="wrap_content"
@@ -49,7 +33,7 @@
                 android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/home_app_bar" />
+                 />
 
             <TextView
                 android:id="@+id/text_current_bal"
@@ -62,11 +46,11 @@
                 android:textColor="?attr/colorAccent"
                 android:textSize="40sp"
                 app:autoSizeTextType="uniform"
-                app:layout_constraintBottom_toTopOf="@id/mpesa_cards"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/text_bal_label"
-                tools:text="KSH 124,456.43" />
+                tools:text="KSH 124,456.43"
+                android:textIsSelectable="true" />
 
             <include
                 android:id="@+id/mpesa_cards"
@@ -74,7 +58,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/small_padding"
-                app:layout_constraintTop_toBottomOf="@id/text_current_bal" />
+                />
 
             <HorizontalScrollView
                 android:id="@+id/home_layoutChips"
@@ -95,7 +79,7 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_past_day"
-                        style="@style/Widget.Material3.Chip.Filter.Elevated"
+                        style="@style/Widget.Material3.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/past_day"
@@ -104,7 +88,7 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_past_week"
-                        style="@style/Widget.Material3.Chip.Filter.Elevated"
+                        style="@style/Widget.Material3.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/past_week"
@@ -113,7 +97,7 @@
 
                     <com.google.android.material.chip.Chip
                         android:id="@+id/chip_past_month"
-                        style="@style/Widget.Material3.Chip.Filter.Elevated"
+                        style="@style/Widget.Material3.Chip.Filter"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
@@ -128,11 +112,31 @@
                 android:id="@+id/mpesa_dets"
                 layout="@layout/home_mpesa_dets" />
 
+            <TextView
+                android:id="@+id/transactions_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/small_padding"
+                android:layout_marginHorizontal="@dimen/small_padding"
+                android:text="@string/recent_transactions"
+                android:textSize="18sp"
+                android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                app:drawableEndCompat="@drawable/ic_arrow_forward" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_home_recent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:paddingHorizontal="@dimen/big_padding"
+                tools:listitem="@layout/item_mpesa_message" />
         </LinearLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <include
-        android:id="@+id/bottom_sheet_transactions"
-        layout="@layout/sheet_transactions" />
-</FrameLayout>
 
+
+    <!--<include
+        android:id="@+id/bottom_sheet_transactions"
+        layout="@layout/sheet_transactions" />-->
+
+</FrameLayout>
