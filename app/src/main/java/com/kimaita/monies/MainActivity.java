@@ -21,13 +21,16 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.WindowCompat;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
@@ -48,14 +51,11 @@ public class MainActivity extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     MoneyViewModel moneyViewModel;
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
         // Checking for first time launch
         prefManager = new PrefManager(this);
         if (prefManager.isFirstTimeLaunch()) {
@@ -69,7 +69,14 @@ public class MainActivity extends AppCompatActivity {
 
         NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
         navController = Objects.requireNonNull(navHostFragment).getNavController();
+        AppBarConfiguration appBarConfiguration =
+                new AppBarConfiguration.Builder(R.id.navigation_home, R.id.navigation_analysis, R.id.settingsFragment)
+                        .build();
         BottomNavigationView bottomNav = findViewById(R.id.bottom_nav);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        NavigationUI.setupWithNavController(
+                toolbar, navController, appBarConfiguration);
+
         NavigationUI.setupWithNavController(bottomNav, navController);
 
         if (checkPermissions()) {
@@ -165,6 +172,5 @@ public class MainActivity extends AppCompatActivity {
         super.onPause();
         sharedPreferences.unregisterOnSharedPreferenceChangeListener(listener);
     }
-
 
 }
