@@ -4,9 +4,10 @@ import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.LENGTH_SHORT;
 import static androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES;
 import static androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode;
-import static com.kimaita.monies.Utils.MessageUtils.defCursorLoader;
-import static com.kimaita.monies.Utils.PrefManager.THEME;
 import static com.kimaita.monies.ui.HomeFragment.LOADER;
+import static com.kimaita.monies.utils.MessageUtils.defineCursorLoader;
+import static com.kimaita.monies.utils.MessageUtils.loadMpesaTransactions;
+import static com.kimaita.monies.utils.PrefManager.THEME;
 
 import android.Manifest;
 import android.content.Context;
@@ -35,8 +36,9 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceManager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.kimaita.monies.Utils.PrefManager;
 import com.kimaita.monies.models.Message;
+import com.kimaita.monies.utils.MessageExtractor;
+import com.kimaita.monies.utils.PrefManager;
 import com.kimaita.monies.viewmodels.MoneyViewModel;
 
 import java.util.List;
@@ -138,7 +140,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
                 if (id == LOADER) {
-                    return defCursorLoader(context, prefManager.getMessageId());
+                    return defineCursorLoader(context, prefManager.getMessageId());
                 }
                 return null;
             }
@@ -146,8 +148,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
                 if (!data.isClosed()) {
-                    List<Message> messages = viewModel.getMpesaTransactions(data, prefManager);
-                    viewModel.insertMessage(messages.toArray(new Message[0]));
+                    List<String> messages = loadMpesaTransactions(data, prefManager);
+                    viewModel.insertMessage(messages.parallelStream().map(s -> new MessageExtractor().getMessage(s)).toArray(Message[]::new));
                 }
             }
 
@@ -159,7 +161,6 @@ public class MainActivity extends AppCompatActivity {
 
         };
     }
-
 
     @Override
     public void onResume() {
